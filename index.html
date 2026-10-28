@@ -33,20 +33,30 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px;border-radius
 .step{border:1px solid #3a3a3a;border-radius:12px;padding:16px;display:flex;gap:12px;align-items:flex-start}
 .step b{font-family:var(--display);font-size:26px;color:#F2C230;line-height:1}
 .step span{color:#E6E1D3;font-size:15px}
+.found{background:var(--chip);border-bottom:1px solid var(--line)}
+.found .wrap{padding-block:36px;display:flex;flex-direction:column;gap:18px}
+.found h2{font-size:clamp(24px,3.4vw,32px);font-weight:600}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.fact-box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:6px}
+.fact-box b{font-size:17px}
+.fact-box span{color:var(--muted);font-size:14px}
+.fact-box.win{border:2px solid var(--yellow)}
 section{padding-block:56px;border-bottom:1px solid var(--line)}
 .sec-head{display:flex;flex-direction:column;gap:8px;margin-bottom:28px;max-width:70ch}
 .sec-head .eyebrow{color:var(--red)}
 .sec-head h2{font-size:clamp(30px,4.6vw,46px);font-weight:600}
 .sec-head p{color:var(--muted);font-size:17px}
-.group{margin-top:32px}
+.group{margin-top:36px}
 .group:first-of-type{margin-top:0}
-.group h3{font-size:20px;font-weight:600;margin-bottom:14px;display:flex;gap:10px;align-items:center}
+.group h3{font-size:20px;font-weight:600;margin-bottom:4px;display:flex;gap:10px;align-items:center}
 .group h3::before{content:"";width:14px;height:14px;background:var(--yellow);border-radius:3px;flex:0 0 14px}
+.group .why{color:var(--muted);font-size:14px;margin-bottom:14px;padding-left:24px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px;min-width:0}
 .card .name{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
 .card .name h4{margin:0;font-size:20px;font-weight:700;letter-spacing:-.01em}
 .card .where{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.proof{align-self:flex-start;font-size:12px;font-weight:700;background:var(--ink);color:var(--bg);border-radius:999px;padding:4px 10px}
 .card .fact{color:var(--muted);font-size:15px}
 .look{display:flex;flex-direction:column;gap:6px;padding-top:12px;border-top:1px dashed var(--line)}
 .look small{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
@@ -55,7 +65,6 @@ section{padding-block:56px;border-bottom:1px solid var(--line)}
 .for b{font-weight:700}
 .open{margin-top:auto;display:inline-flex;align-items:center;gap:8px;align-self:flex-start;font-weight:700;font-size:14px;text-decoration:none;border:2px solid var(--ink);border-radius:9px;padding:9px 14px}
 .open:hover{background:var(--yellow);border-color:var(--yellow);color:#141414}
-.open svg{width:14px;height:14px}
 .dir{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:24px}
 .dir + .dir{margin-top:16px}
 .dir .idea{display:flex;flex-direction:column;gap:8px}
@@ -88,7 +97,7 @@ footer .wrap{padding-block:28px;color:var(--muted);font-size:13px;display:flex;j
   <div class="wrap">
     <span class="eyebrow">Rogers Furniture · Inspiration board</span>
     <h1>Ideas for your <span>website</span> and <span>logo</span></h1>
-    <p>We pulled stores that sell a lot and look a lot like you: family stores, custom sofa builders, and the big names your customers compare you to. Look through them and tell us what you like.</p>
+    <p>We searched Google the way your customers do, in English and Spanish, and pulled the stores that come out on top. Look through them and tell us what you like.</p>
     <div class="steps">
       <div class="step"><b>1</b><span>Open the sites and scroll the homepage like a customer would.</span></div>
       <div class="step"><b>2</b><span>Pick the 2 or 3 sites and 3 to 5 logos you like most.</span></div>
@@ -97,88 +106,95 @@ footer .wrap{padding-block:28px;color:var(--muted);font-size:13px;display:flex;j
   </div>
 </header>
 <main>
+<div class="found">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--red)">What we found on Google · Oct 27, 2026</span>
+    <h2>Where Rogers stands today</h2>
+    <div class="facts">
+      <div class="fact-box"><b>No Rogers website shows up</b><span>Searching "furniture store la puente ca," you only appear through Yelp and a Facebook page.</span></div>
+      <div class="fact-box"><b>Casa Latina does</b><span>The store down the street at 1079 N Hacienda ranks with its own website.</span></div>
+      <div class="fact-box win"><b>Nobody owns the Spanish searches</b><span>Search "muebles a crédito sin crédito los angeles" and not one furniture store ranks. Only lenders. That spot is open for Rogers.</span></div>
+    </div>
+  </div>
+</div>
 <section>
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Websites</span>
-      <h2>Stores worth stealing from</h2>
-      <p>Each card says what the store is, what to look at on their site, and how we'd use that idea for Rogers.</p>
+      <h2>The stores winning on Google</h2>
+      <p>Every store here showed up at the top of a real search. Each card says what to look at on their site and how we'd use it for Rogers.</p>
     </div>
     <div class="group">
-      <h3>Family stores like yours</h3>
+      <h3>Custom sofas in LA</h3>
+      <p class="why">Top of Google for "custom sofa los angeles"</p>
       <div class="grid">
         <article class="card">
-          <div class="name"><h4>El Dorado Furniture</h4><span class="where">Miami, FL</span></div>
-          <p class="fact">Run by the Capó family since 1967, starting on Calle Ocho in Little Havana. Billed as the largest Hispanic-owned furniture retailer in the U.S.</p>
-          <div class="look"><small>Look at</small><p>How the family story is the brand. They lead with where they came from and who still runs it.</p></div>
-          <p class="for"><b>For Rogers:</b> 50+ years on Hacienda and your mom at the counter. That story goes up top, not buried on an About page.</p>
-          <a class="open" href="https://www.eldoradofurniture.com" target="_blank" rel="noopener">Open site ↗</a>
+          <div class="name"><h4>Clad Home</h4><span class="where">Los Angeles</span></div>
+          <span class="proof">#1 on Google</span>
+          <p class="fact">Custom sofas designed and built in LA, sold from a showroom on Melrose and online.</p>
+          <div class="look"><small>Look at</small><p>"Build your dream sofa" is the first button you see. Right under it: "Everything we make is designed and built in Los Angeles," then a row of real customer reviews.</p></div>
+          <p class="for"><b>For Rogers:</b> the same three moves. Build your sofa, built right here in La Puente, real reviews. In English and Spanish.</p>
+          <a class="open" href="https://www.cladhome.com" target="_blank" rel="noopener">Open site ↗</a>
         </article>
         <article class="card">
-          <div class="name"><h4>Sofa U Love</h4><span class="where">Southern California</span></div>
-          <p class="fact">Family business since 1971. Builds in its own Los Angeles factory, in almost any size, with over 1,000 fabrics.</p>
-          <div class="look"><small>Look at</small><p>How "made here in LA, to your size" is the whole pitch. It's the closest business to your custom sofas.</p></div>
-          <p class="for"><b>For Rogers:</b> same promise, closer to home, and faster. Built locally in 7 to 14 days.</p>
-          <a class="open" href="https://www.sofaulove.com" target="_blank" rel="noopener">Open site ↗</a>
-        </article>
-        <article class="card">
-          <div class="name"><h4>Jordan's Furniture</h4><span class="where">New England</span></div>
-          <p class="fact">Started by the Tatelman family in 1928. The family brothers starred in their own ads for decades, and the stores are known as places people go for fun.</p>
-          <div class="look"><small>Look at</small><p>The personality. It feels like real people run it, not a corporation.</p></div>
-          <p class="for"><b>For Rogers:</b> put Sebastian and the family in the photos and videos. Faces sell more than furniture shots.</p>
-          <a class="open" href="https://www.jordans.com" target="_blank" rel="noopener">Open site ↗</a>
+          <div class="name"><h4>DreamSofa</h4><span class="where">Los Angeles</span></div>
+          <span class="proof">Page 1 on Google</span>
+          <p class="fact">Custom sofas and sectionals handcrafted in LA, with free fabric swatches.</p>
+          <div class="look"><small>Look at</small><p>The proof bar under the big photo: Built in LA, 35-day build, lifetime warranty, 100-day trial, 250+ fabrics. And a "Free swatch" button in the menu.</p></div>
+          <p class="for"><b>For Rogers:</b> our own proof bar. Built locally in 7 to 14 days, approved on income, delivered by the family, 50+ years on Hacienda.</p>
+          <a class="open" href="https://www.dreamsofa.com" target="_blank" rel="noopener">Open site ↗</a>
         </article>
       </div>
     </div>
     <div class="group">
-      <h3>Custom sofa builders</h3>
+      <h3>Financing stores like yours</h3>
+      <p class="why">Top of Google Maps for "furniture financing no credit check los angeles"</p>
       <div class="grid">
         <article class="card">
-          <div class="name"><h4>Benchmade Modern</h4><span class="where">Online</span></div>
-          <p class="fact">Custom sofas handcrafted in the USA. Sizes in 5-inch steps, free fabric swatches, delivery in as little as four weeks.</p>
-          <div class="look"><small>Look at</small><p>The sofa builder: pick the shape, size, fabric and legs, and the price updates as you go.</p></div>
-          <p class="for"><b>For Rogers:</b> the same builder, but sized to the inch and ready in about two weeks, from a store you can walk into.</p>
-          <a class="open" href="https://benchmademodern.com" target="_blank" rel="noopener">Open site ↗</a>
+          <div class="name"><h4>EZ2GET Furniture</h4><span class="where">South LA</span></div>
+          <span class="proof">4.8 ★ · 309 reviews</span>
+          <p class="fact">A local LA furniture store built on easy payments. Reviewers say "Easy financing, and delivery."</p>
+          <div class="look"><small>Look at</small><p>"Custom sofas" and "Financing &amp; lease-to-own" sit right in the main menu, the price is on the main photo, and financing gets its own section on the homepage.</p></div>
+          <p class="for"><b>For Rogers:</b> the closest model to your store. Same layout, with Lizzy's financing in place of the outside lenders.</p>
+          <a class="open" href="https://easy2getfurniture.com" target="_blank" rel="noopener">Open site ↗</a>
         </article>
         <article class="card">
-          <div class="name"><h4>Joybird</h4><span class="where">Online + showrooms</span></div>
-          <p class="fact">Customizable sofas and sectionals, with free fabric samples, free design help and financing all one click away.</p>
-          <div class="look"><small>Look at</small><p>How free samples and free design help are offered everywhere, so nobody's scared to ask.</p></div>
-          <p class="for"><b>For Rogers:</b> Sebastian's floor-plan layouts become "free room design," right next to every sofa.</p>
-          <a class="open" href="https://www.joybird.com" target="_blank" rel="noopener">Open site ↗</a>
-        </article>
-        <article class="card">
-          <div class="name"><h4>Simplicity Sofas</h4><span class="where">High Point, NC</span></div>
-          <p class="fact">Made in North Carolina, built for small spaces. Some pieces fit through openings as narrow as 15 inches.</p>
-          <div class="look"><small>Look at</small><p>Shopping by space: apartment-size, full-size, sectionals. People know their room before they know a style.</p></div>
-          <p class="for"><b>For Rogers:</b> a "fits your apartment" section for all the new units going up around the store.</p>
-          <a class="open" href="https://simplicitysofas.com" target="_blank" rel="noopener">Open site ↗</a>
+          <div class="name"><h4>Landeros Furniture</h4><span class="where">LA + Commerce</span></div>
+          <span class="proof">4.8 ★ · 602 reviews</span>
+          <p class="fact">Two LA-area stores. Their website is simple. What wins is the reviews, where customers name the person who helped them with monthly payments.</p>
+          <div class="look"><small>Look at</small><p>Their Google Maps listing more than the site. 602 reviews is why they come up first.</p></div>
+          <p class="for"><b>For Rogers:</b> a review request after every sale, so customers mention Sebastian and the family by name.</p>
+          <a class="open" href="https://landerosfurniture.com" target="_blank" rel="noopener">Open site ↗</a>
         </article>
       </div>
     </div>
     <div class="group">
-      <h3>The big names your customers compare you to</h3>
+      <h3>The big names on your searches</h3>
+      <p class="why">What shows up when someone searches for a furniture store in La Puente</p>
       <div class="grid">
+        <article class="card">
+          <div class="name"><h4>Bob's Discount Furniture</h4><span class="where">Baldwin Park</span></div>
+          <span class="proof">4.8 ★ · 2,940 reviews</span>
+          <p class="fact">Ranks for La Puente searches from its Baldwin Park store. No. 7 on Furniture Today's Top 100 list.</p>
+          <div class="look"><small>Look at</small><p>Plain-talk prices, a friendly voice, and a financing page that ranks on its own.</p></div>
+          <p class="for"><b>For Rogers:</b> Google lists you as "Roger's Discount Furniture." This is discount done well.</p>
+          <a class="open" href="https://www.mybobs.com" target="_blank" rel="noopener">Open site ↗</a>
+        </article>
         <article class="card">
           <div class="name"><h4>Living Spaces</h4><span class="where">Southern California</span></div>
-          <p class="fact">The big SoCal chain. Pushes 60-month financing, next-day delivery in some areas, and a 3D room designer.</p>
-          <div class="look"><small>Look at</small><p>Financing and delivery sit in the very top banner, before you even see a couch.</p></div>
+          <span class="proof">Buys ads on your searches</span>
+          <p class="fact">The big SoCal chain. Pays to show up when people search for furniture stores in La Puente.</p>
+          <div class="look"><small>Look at</small><p>Financing and delivery sit in the very top banner, before you see a single couch.</p></div>
           <p class="for"><b>For Rogers:</b> "Approved on income, not your credit score" goes in that same top spot.</p>
           <a class="open" href="https://www.livingspaces.com" target="_blank" rel="noopener">Open site ↗</a>
         </article>
         <article class="card">
-          <div class="name"><h4>Bob's Discount Furniture</h4><span class="where">27 states</span></div>
-          <p class="fact">No. 7 on Furniture Today's Top 100 stores list, with 216 stores. The only top-10 retailer with double-digit sales growth.</p>
-          <div class="look"><small>Look at</small><p>Plain-talk prices and a friendly voice. Discount without feeling cheap.</p></div>
-          <p class="for"><b>For Rogers:</b> on Google you're "Roger's Discount Furniture." This is what doing discount well looks like.</p>
-          <a class="open" href="https://www.mybobs.com" target="_blank" rel="noopener">Open site ↗</a>
-        </article>
-        <article class="card">
-          <div class="name"><h4>Northgate Market</h4><span class="where">Southern California</span></div>
-          <p class="fact">Not furniture, but your customers know it. The González family came from Jalisco and grew one Anaheim store into 40+ markets.</p>
-          <div class="look"><small>Look at</small><p>How they talk about family and community in both languages, and how it never feels like a chain.</p></div>
-          <p class="for"><b>For Rogers:</b> the tone for our Spanish copy and the family section.</p>
-          <a class="open" href="https://www.northgatemarket.com" target="_blank" rel="noopener">Open site ↗</a>
+          <div class="name"><h4>El Dorado Furniture</h4><span class="where">Miami, FL</span></div>
+          <span class="proof">For the family story</span>
+          <p class="fact">Run by the Capó family since 1967. Billed as the largest Hispanic-owned furniture retailer in the U.S. Not on your searches, but the best example of family as the brand.</p>
+          <div class="look"><small>Look at</small><p>How they lead with where they came from and who still runs it.</p></div>
+          <p class="for"><b>For Rogers:</b> 50+ years on Hacienda and your mom at the counter goes up top, not buried on an About page.</p>
+          <a class="open" href="https://www.eldoradofurniture.com" target="_blank" rel="noopener">Open site ↗</a>
         </article>
       </div>
     </div>
@@ -189,11 +205,12 @@ footer .wrap{padding-block:28px;color:var(--muted);font-size:13px;display:flex;j
     <div class="sec-head">
       <span class="eyebrow">Logos</span>
       <h2>Five directions, with real examples</h2>
-      <p>Click a brand to see its logo. You don't have to pick a direction, just tell us which logos you like. That points us to the right one.</p>
+      <p>Click a brand to see its logo. Some are the same stores above. You don't have to pick a direction, just tell us which logos you like.</p>
     </div>
     <div class="dir">
-      <div class="idea"><span class="tag">Closest to your sign</span><h3>Script + bold letters</h3><p>A handwritten name next to strong block letters. Feels personal and local, like a sign that's been on the street forever.</p></div>
+      <div class="idea"><span class="tag">Closest to your sign</span><h3>Script + bold letters</h3><p>A handwritten name next to strong letters. Feels personal and local, like a sign that's been on the street forever.</p></div>
       <div class="ex">
+        <a href="https://thesofaguy.com" target="_blank" rel="noopener"><b>The Sofa Guy</b><span>A red script name over a yellow swoosh. A local LA sofa maker.</span><i>See logo ↗</i></a>
         <a href="https://1000logos.net/best-furniture-brands/" target="_blank" rel="noopener"><b>Villa Outdoors</b><span>Brush-style cursive "Villa" over an extra-bold "Outdoors."</span><i>See logo ↗</i></a>
         <a href="https://www.schoolhouse.com" target="_blank" rel="noopener"><b>Schoolhouse</b><span>A small building-and-bell emblem over a handwritten-style name.</span><i>See logo ↗</i></a>
       </div>
@@ -201,17 +218,25 @@ footer .wrap{padding-block:28px;color:var(--muted);font-size:13px;display:flex;j
     <div class="dir">
       <div class="idea"><span class="tag">Modern</span><h3>Big, bold name</h3><p>Just the name in heavy letters and one strong color. Easy to read on a phone, the truck and a Google pin.</p></div>
       <div class="ex">
+        <a href="https://landerosfurniture.com" target="_blank" rel="noopener"><b>Landeros</b><span>A bold navy name with "Furniture" under it and an orange swoosh.</span><i>See logo ↗</i></a>
         <a href="https://floydhome.com" target="_blank" rel="noopener"><b>Floyd</b><span>Extra-bold geometric letters in red on white.</span><i>See logo ↗</i></a>
         <a href="https://burrow.com" target="_blank" rel="noopener"><b>Burrow</b><span>Clean uppercase letters, often shown on a soft yellow.</span><i>See logo ↗</i></a>
-        <a href="https://1000logos.net/best-furniture-brands/" target="_blank" rel="noopener"><b>BDI</b><span>Extra-bold black letters with an orange square over the "i."</span><i>See logo ↗</i></a>
       </div>
     </div>
     <div class="dir">
-      <div class="idea"><span class="tag">Works tiny</span><h3>One-letter icon</h3><p>A single "R" mark that stands on its own on Instagram, a tag or a sofa label, with the full name beside it when there's room.</p></div>
+      <div class="idea"><span class="tag">Works tiny</span><h3>Small icon + clean name</h3><p>A simple mark that stands on its own on Instagram, a tag or a sofa label, with the full name beside it when there's room.</p></div>
       <div class="ex">
+        <a href="https://www.dreamsofa.com" target="_blank" rel="noopener"><b>DreamSofa</b><span>A small icon next to a clean, simple name.</span><i>See logo ↗</i></a>
         <a href="https://www.modloft.com" target="_blank" rel="noopener"><b>Modloft</b><span>A solid black square with a white "M."</span><i>See logo ↗</i></a>
         <a href="https://www.maidenhome.com" target="_blank" rel="noopener"><b>Maiden Home</b><span>A stylized "M" in a diamond, with a gold serif name.</span><i>See logo ↗</i></a>
-        <a href="https://1000logos.net/best-furniture-brands/" target="_blank" rel="noopener"><b>The Joinery</b><span>A black circle with a hand-drawn white "J."</span><i>See logo ↗</i></a>
+      </div>
+    </div>
+    <div class="dir">
+      <div class="idea"><span class="tag">Heritage</span><h3>Badge or seal</h3><p>A round mark with the name around the edge. Feels established, and looks great on tags, bags and the truck.</p></div>
+      <div class="ex">
+        <a href="https://www.cladhome.com" target="_blank" rel="noopener"><b>Clad Home</b><span>A round seal with a flower and "est. 2015" around the edge.</span><i>See logo ↗</i></a>
+        <a href="https://easy2getfurniture.com" target="_blank" rel="noopener"><b>EZ2GET</b><span>A red-and-white name inside a bold blue circle.</span><i>See logo ↗</i></a>
+        <a href="https://www.bludot.com" target="_blank" rel="noopener"><b>Blu Dot</b><span>A blue-and-white name set inside a circle.</span><i>See logo ↗</i></a>
       </div>
     </div>
     <div class="dir">
@@ -219,13 +244,6 @@ footer .wrap{padding-block:28px;color:var(--muted);font-size:13px;display:flex;j
       <div class="ex">
         <a href="https://www.stickley.com" target="_blank" rel="noopener"><b>Stickley</b><span>A bold serif name with a small tagline split by a thin line.</span><i>See logo ↗</i></a>
         <a href="https://1000logos.net/best-furniture-brands/" target="_blank" rel="noopener"><b>Medley</b><span>A lowercase serif name with long, sharp serifs.</span><i>See logo ↗</i></a>
-      </div>
-    </div>
-    <div class="dir">
-      <div class="idea"><span class="tag">Heritage</span><h3>Badge or seal</h3><p>A round mark with the name around the edge. Feels established, and looks great stamped on tags, bags and the truck.</p></div>
-      <div class="ex">
-        <a href="https://www.bludot.com" target="_blank" rel="noopener"><b>Blu Dot</b><span>A blue-and-white name set inside a circle.</span><i>See logo ↗</i></a>
-        <a href="https://1000logos.net/best-furniture-brands/" target="_blank" rel="noopener"><b>Vermont Woods Studio</b><span>A green house-shaped emblem with a matching uppercase name.</span><i>See logo ↗</i></a>
       </div>
     </div>
   </div>
